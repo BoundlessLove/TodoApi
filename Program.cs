@@ -13,6 +13,7 @@ builder.Services.AddDbContext<TodoContext>(opt =>
 //{
 //    c.SwaggerDoc("v1", new() { Title = "TodoApi", Version = "v1" });
 //});
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -20,7 +21,7 @@ var app = builder.Build();
 if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-//    app.UseSwagger();
+    app.UseSwagger();
 //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodoApi v1"));
 }
 
